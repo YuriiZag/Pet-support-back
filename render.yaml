@@ -1,9 +1,6 @@
 services:
   - type: web
-    name: my-react-app
+    name: pet-support-backend
     env: node
-    buildCommand: "npm run build"  # команда для збору статичних файлів
-    startCommand: "serve -s build" # використовується для запуску сервера з побудованими файлами
-    publishDirectory: "./dist"     # директорія, що містить зібрані файли
-    branch: main                  # гілка для деплою
-    plan: free     
+    buildCommand: npm run build  # Або просто 'npm install', якщо не потрібно збирати проект
+    startCommand: npm run start   

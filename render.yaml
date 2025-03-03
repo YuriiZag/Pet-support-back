@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: my-react-app
+    env: node
+    buildCommand: "npm run build"  # команда для збору статичних файлів
+    startCommand: "serve -s build" # використовується для запуску сервера з побудованими файлами
+    publishDirectory: "build"     # директорія, що містить зібрані файли
+    branch: main                  # гілка для деплою
+    plan: free     

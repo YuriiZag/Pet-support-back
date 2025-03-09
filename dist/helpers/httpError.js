@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const messages = {
     400: 'BadRequest',
     401: 'Unauthorized',
@@ -42,11 +44,11 @@ const messages = {
     511: 'NetworkAuthenticationRequired',
 };
 class HttpError extends Error {
-    status;
     constructor(status, messege = messages[status]) {
         super(messege);
         this.status = status;
         Object.setPrototypeOf(this, HttpError.prototype);
     }
 }
-export default HttpError;
+exports.default = HttpError;
+//# sourceMappingURL=httpError.js.map

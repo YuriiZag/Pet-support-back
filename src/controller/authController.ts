@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { AuthRequest } from "../interfaces/authInterface.ts";
-import { register, current, login, logout, updateUser } from "../service/auth.ts";
+import { AuthRequest } from "../interfaces/authInterface";
+import { register, current, login, logout, updateUser } from "../service/auth";
 
 
 export const loginController = async (req: Request, res: Response) => {

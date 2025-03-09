@@ -1,13 +1,13 @@
 import express from "express";
-import authMiddleware from "../../midlleware/authMiddleware.ts";
-import asyncWrapper from "../../helpers/asyncWrapper.ts";
+import authMiddleware from "../../midlleware/authMiddleware";
+import asyncWrapper from "../../helpers/asyncWrapper";
 import {
   registerController,
   loginController,
   logoutController,
   currentController,
   updateController,
-} from "../../controller/authController.ts";
+} from "../../controller/authController";
 
 const router = express.Router();
 

@@ -1,9 +1,9 @@
-import { AuthInterface, UserInterface } from "../interfaces/authInterface.ts";
-import { PetInterface } from "../interfaces/petInterface.ts";
+import { AuthInterface, UserInterface } from "../interfaces/authInterface";
+import { PetInterface } from "../interfaces/petInterface";
 
-import User from "../db/mongoSchemas/userSchema.ts";
-import HttpError from "../helpers/httpError.ts";
-import Pet from "../db/mongoSchemas/petSchema.ts";
+import User from "../db/mongoSchemas/userSchema";
+import HttpError from "../helpers/httpError";
+import Pet from "../db/mongoSchemas/petSchema";
 
 export const getPets = async (user: AuthInterface) => {
   const pets: PetInterface[] | null = await Pet.find({ owner: user.userId });

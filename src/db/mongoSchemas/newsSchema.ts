@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { NewsInterface } from "../../interfaces/newsInterface.ts";
+import { NewsInterface } from "../../interfaces/newsInterface";
 
 const newsSchema = new mongoose.Schema<NewsInterface>({
   title: {

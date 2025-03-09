@@ -1,6 +1,6 @@
 import express from "express";
-import asyncWrapper from "../../helpers/asyncWrapper.ts";
-import authMiddleware from "../../midlleware/authMiddleware.ts";
+import asyncWrapper from "../../helpers/asyncWrapper";
+import authMiddleware from "../../midlleware/authMiddleware";
 import {
   noticeByIdController,
   noticeByCategoryController,
@@ -10,7 +10,7 @@ import {
   getFavouriteController,
   deletNoticesController,
   getOwnNoticesController,
-} from "../../controller/noticeController.ts";
+} from "../../controller/noticeController";
 
 const router = express.Router();
 

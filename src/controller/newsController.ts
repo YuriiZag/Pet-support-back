@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getNews } from "../service/news.ts";
+import { getNews } from "../service/news";
 
 
 export const newsController = async (req: Request, res: Response) => {

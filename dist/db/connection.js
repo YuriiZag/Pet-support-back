@@ -1,9 +1,15 @@
-import mongoose from "mongoose";
-export async function dbConnnection() {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.dbConnnection = dbConnnection;
+const mongoose_1 = __importDefault(require("mongoose"));
+async function dbConnnection() {
     try {
-        await mongoose.set("strictQuery", true);
+        await mongoose_1.default.set("strictQuery", true);
         if (process.env.DB_URL) {
-            await mongoose.connect(process.env.DB_URL);
+            await mongoose_1.default.connect(process.env.DB_URL);
         }
     }
     catch (error) {
@@ -16,3 +22,4 @@ export async function dbConnnection() {
         return process.exit(1);
     }
 }
+//# sourceMappingURL=connection.js.map

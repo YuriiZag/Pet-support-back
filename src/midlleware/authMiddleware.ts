@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { AuthRequest } from "../interfaces/authInterface.ts";
+import { AuthRequest } from "../interfaces/authInterface";
 import jwt, { JwtPayload } from "jsonwebtoken";
-import HttpError from "../helpers/httpError.ts";
+import HttpError from "../helpers/httpError";
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   

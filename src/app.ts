@@ -2,13 +2,13 @@ import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import * as dotenv from "dotenv";
 
-import errorMiddleware from "./midlleware/errorMiddleware.ts";
-import userRouter from "./routes/api/authRouter.ts";
-import newsRouter from "./routes/api/newsRouter.ts";
-import petsRouter from "./routes/api/petsRouter.ts";
-import serviceRouter from "./routes/api/servicesRouter.ts";
-import noticeRouter from "./routes/api/noticeRouter.ts";
-import HttpError from "./helpers/httpError.ts";
+import errorMiddleware from "./midlleware/errorMiddleware";
+import userRouter from "./routes/api/authRouter";
+import newsRouter from "./routes/api/newsRouter";
+import petsRouter from "./routes/api/petsRouter";
+import serviceRouter from "./routes/api/servicesRouter";
+import noticeRouter from "./routes/api/noticeRouter";
+import HttpError from "./helpers/httpError";
 
   dotenv.config();
 

@@ -1,5 +1,5 @@
-import app from "./app.ts";
-import { dbConnnection } from "./db/connection.ts";
+import app from "./app";
+import { dbConnnection } from "./db/connection";
 
 
 

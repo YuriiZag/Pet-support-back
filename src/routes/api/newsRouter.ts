@@ -1,6 +1,6 @@
 import express from "express";
-import asyncWrapper from "../../helpers/asyncWrapper.ts";
-import { newsController } from "../../controller/newsController.ts";
+import asyncWrapper from "../../helpers/asyncWrapper";
+import { newsController } from "../../controller/newsController";
 
 
 const router = express.Router()

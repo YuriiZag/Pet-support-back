@@ -1,13 +1,19 @@
-import User from "../db/mongoSchemas/userSchema.ts";
-import HttpError from "../helpers/httpError.ts";
-import jwt from "jsonwebtoken";
-export const register = async (body) => {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateUser = exports.logout = exports.current = exports.login = exports.register = void 0;
+const userSchema_1 = __importDefault(require("../db/mongoSchemas/userSchema"));
+const httpError_1 = __importDefault(require("../helpers/httpError"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const register = async (body) => {
     const { email, name, password, city, phoneNumber } = body;
-    const emailInUse = await User.findOne({ email });
+    const emailInUse = await userSchema_1.default.findOne({ email });
     if (emailInUse) {
-        throw new HttpError(409, "email already in use");
+        throw new httpError_1.default(409, "email already in use");
     }
-    const user = new User({
+    const user = new userSchema_1.default({
         name: name,
         email: email,
         password: password,
@@ -18,20 +24,21 @@ export const register = async (body) => {
     await user.save();
     return user;
 };
-export const login = async (body) => {
+exports.register = register;
+const login = async (body) => {
     const salt = process.env.JWT_SALT;
     if (!salt) {
         throw new Error("JWT_SALT is not defined in the environment variables.");
     }
     const { email, password } = body;
-    const user = await User.findOne({ email });
+    const user = await userSchema_1.default.findOne({ email });
     if (!user) {
-        throw new HttpError(404, `user with email addres ${email} does not exist`);
+        throw new httpError_1.default(404, `user with email addres ${email} does not exist`);
     }
     if (user.password !== password) {
-        throw new HttpError(401, `wrong password`);
+        throw new httpError_1.default(401, `wrong password`);
     }
-    const token = jwt.sign({
+    const token = jsonwebtoken_1.default.sign({
         userId: user._id,
         email: user.email,
     }, salt);
@@ -39,13 +46,14 @@ export const login = async (body) => {
     user.save();
     return { token, email: user.email, userName: user.name };
 };
-export const current = async (user) => {
-    const searchedUser = await User.findById(user.userId);
+exports.login = login;
+const current = async (user) => {
+    const searchedUser = await userSchema_1.default.findById(user.userId);
     if (!searchedUser) {
-        throw new HttpError(401);
+        throw new httpError_1.default(401);
     }
     const currentUser = {
-        id: searchedUser._id,
+        _id: searchedUser._id,
         name: searchedUser.name,
         email: searchedUser.email,
         city: searchedUser.city,
@@ -58,18 +66,22 @@ export const current = async (user) => {
     };
     return currentUser;
 };
-export const logout = async (user) => {
-    await User.findByIdAndUpdate({ _id: user.userId }, {
+exports.current = current;
+const logout = async (user) => {
+    await userSchema_1.default.findByIdAndUpdate({ _id: user.userId }, {
         token: "",
     });
-    if (!updateUser) {
-        throw new HttpError(401);
+    if (!exports.updateUser) {
+        throw new httpError_1.default(401);
     }
 };
-export const updateUser = async (user, body) => {
-    const updateUser = await User.findByIdAndUpdate({ _id: user.userId }, { $set: body }, { new: true });
+exports.logout = logout;
+const updateUser = async (user, body) => {
+    const updateUser = await userSchema_1.default.findByIdAndUpdate({ _id: user.userId }, { $set: body }, { new: true });
     if (!updateUser) {
-        throw new HttpError(401);
+        throw new httpError_1.default(401);
     }
     return updateUser;
 };
+exports.updateUser = updateUser;
+//# sourceMappingURL=auth.js.map

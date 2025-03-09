@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { AuthRequest } from "../interfaces/authInterface.ts";
-import { getPets, addPet, deletePet } from "../service/pet.ts";
+import { AuthRequest } from "../interfaces/authInterface";
+import { getPets, addPet, deletePet } from "../service/pet";
 
 
 export const getPetsController = async (req: AuthRequest, res: Response) => {

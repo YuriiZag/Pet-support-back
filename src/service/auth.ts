@@ -1,11 +1,11 @@
-import User from "../db/mongoSchemas/userSchema.ts";
-import HttpError from "../helpers/httpError.ts";
+import User from "../db/mongoSchemas/userSchema";
+import HttpError from "../helpers/httpError";
 import {
   UserInterface,
   RegisterInterface,
   LoginInterface,
   AuthInterface,
-} from "../interfaces/authInterface.ts";
+} from "../interfaces/authInterface";
 import jwt   from "jsonwebtoken";
 
 export const register = async (body: RegisterInterface) => {

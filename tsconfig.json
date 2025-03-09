@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "outDir": "./dist",                        
+    "target": "ES2020",                        // Встановлюємо цільовий стандарт JavaScript (можна використовувати ESNext, якщо потрібно)
+    "module": "CommonJS",                      // Використовуємо CommonJS для Node.js
+    "moduleResolution": "node",                // Node.js розв'язання модулів
+    "strict": true,                            // Увімкнення строгого режиму (рекомендовано)
+    "esModuleInterop": true,                   // Забезпечує коректну роботу імпортів CommonJS модулів
+    "skipLibCheck": true,                      // Пропускаємо перевірку типів у бібліотеках для пришвидшення компіляції
+    "forceConsistentCasingInFileNames": true,  // Забезпечує консистентність регістру в іменах файлів
+    "outDir": "./dist",                        // Вихідна директорія для згенерованих файлів
+    "allowJs": true,                           // Дозволяє компілювати і JavaScript файли (якщо потрібно)
+    "resolveJsonModule": true,                 // Дозволяє імпортувати JSON файли
+    "sourceMap": true                          // Генерує мапи джерел для налагодження (опційно)
   },
   "include": [
-    "src/**/*"
+    "src/**/*"                                 // Включаємо всі файли з папки src
   ],
   "exclude": [
-    "node_modules"
+    "node_modules"                             // Виключаємо папку node_modules
   ]
 }

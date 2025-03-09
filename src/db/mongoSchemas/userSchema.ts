@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { UserInterface } from "../../interfaces/authInterface.ts";
+import { UserInterface } from "../../interfaces/authInterface";
 
 const userSchema = new mongoose.Schema<UserInterface>({
   avatar: {

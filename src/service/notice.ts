@@ -1,8 +1,8 @@
-import Notice from "../db/mongoSchemas/noticeSchema.ts";
-import User from "../db/mongoSchemas/userSchema.ts";
-import HttpError from "../helpers/httpError.ts";
-import { AuthInterface, UserInterface } from "../interfaces/authInterface.ts";
-import { NoticeInterface } from "../interfaces/noticeIntefaces.ts";
+import Notice from "../db/mongoSchemas/noticeSchema";
+import User from "../db/mongoSchemas/userSchema";
+import HttpError from "../helpers/httpError";
+import { AuthInterface, UserInterface } from "../interfaces/authInterface";
+import { NoticeInterface } from "../interfaces/noticeIntefaces";
 
 
 export const getNoticesByTittle = async (title: string) => {

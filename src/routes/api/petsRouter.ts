@@ -1,7 +1,7 @@
 import express from "express";
-import asyncWrapper from "../../helpers/asyncWrapper.ts";
-import authMiddleware from "../../midlleware/authMiddleware.ts";
-import { getPetsController, addPetsController, deletePetController } from "../../controller/petController.ts";
+import asyncWrapper from "../../helpers/asyncWrapper";
+import authMiddleware from "../../midlleware/authMiddleware";
+import { getPetsController, addPetsController, deletePetController } from "../../controller/petController";
 
 const router = express.Router()
 

@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { NoticeInterface } from "../../interfaces/noticeIntefaces.ts";
+import { NoticeInterface } from "../../interfaces/noticeIntefaces";
 
 const noticeSchema = new mongoose.Schema<NoticeInterface>({
   category: {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthRequest } from "../interfaces/authInterface.ts";
+import { AuthRequest } from "../interfaces/authInterface";
 import {
   getNoticesById,
   getNoticesByTittle,
@@ -9,7 +9,7 @@ import {
   getOwnNotices,
   getFavouriteNotices,
   deletOwnNotices,
-} from "../service/notice.ts";
+} from "../service/notice";
 
 export const noticeByIdController = async (req: Request, res: Response) => {
   const notices = await getNoticesById(req.params.id);

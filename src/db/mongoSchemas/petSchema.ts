@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { PetInterface } from "../../interfaces/petInterface.ts";
+import { PetInterface } from "../../interfaces/petInterface";
 
 const petSchema = new mongoose.Schema<PetInterface>({
   name: {

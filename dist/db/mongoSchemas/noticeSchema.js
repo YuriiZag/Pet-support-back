@@ -1,5 +1,10 @@
-import mongoose from "mongoose";
-const noticeSchema = new mongoose.Schema({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
+const noticeSchema = new mongoose_1.default.Schema({
     category: {
         type: String,
         enum: ["sell", "lost/found", "in good hands"],
@@ -53,7 +58,8 @@ const noticeSchema = new mongoose.Schema({
         required: true,
     },
     email: { type: String, trim: true },
-    phone: { type: String, trim: true },
+    phoneNumber: { type: String, trim: true },
 });
-const Notice = mongoose.model("notices", noticeSchema);
-export default Notice;
+const Notice = mongoose_1.default.model("notices", noticeSchema);
+exports.default = Notice;
+//# sourceMappingURL=noticeSchema.js.map

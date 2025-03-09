@@ -1,5 +1,10 @@
-import mongoose from "mongoose";
-const newsSchema = new mongoose.Schema({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
+const newsSchema = new mongoose_1.default.Schema({
     title: {
         type: String,
         trim: true,
@@ -17,5 +22,6 @@ const newsSchema = new mongoose.Schema({
         trim: true,
     },
 });
-const News = mongoose.model("news", newsSchema);
-export default News;
+const News = mongoose_1.default.model("news", newsSchema);
+exports.default = News;
+//# sourceMappingURL=newsSchema.js.map

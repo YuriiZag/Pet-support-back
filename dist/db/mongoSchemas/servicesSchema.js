@@ -1,5 +1,10 @@
-import mongoose from "mongoose";
-const servicesSchema = new mongoose.Schema({
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
+const servicesSchema = new mongoose_1.default.Schema({
     serviceName: {
         type: String,
         trim: true,
@@ -25,5 +30,6 @@ const servicesSchema = new mongoose.Schema({
         trim: true,
     },
 });
-const Services = mongoose.model("services", servicesSchema);
-export default Services;
+const Services = mongoose_1.default.model("services", servicesSchema);
+exports.default = Services;
+//# sourceMappingURL=servicesSchema.js.map

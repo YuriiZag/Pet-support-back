@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { ServiceInterface } from "../../interfaces/servicInterface.ts";
+import { ServiceInterface } from "../../interfaces/servicInterface";
 
 const servicesSchema = new mongoose.Schema<ServiceInterface>({
   serviceName: {

@@ -1,6 +1,6 @@
-import News from "../db/mongoSchemas/newsSchema.ts";
-import HttpError from "../helpers/httpError.ts";
-import { NewsInterface } from "../interfaces/newsInterface.ts";
+import News from "../db/mongoSchemas/newsSchema";
+import HttpError from "../helpers/httpError";
+import { NewsInterface } from "../interfaces/newsInterface";
 
 export const getNews = async () => {
     const news: NewsInterface[] | null = await News.find({})

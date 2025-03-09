@@ -1,6 +1,6 @@
-import Services from "../db/mongoSchemas/servicesSchema.ts";
-import HttpError from "../helpers/httpError.ts";
-import { ServiceInterface } from "../interfaces/servicInterface.ts";
+import Services from "../db/mongoSchemas/servicesSchema";
+import HttpError from "../helpers/httpError";
+import { ServiceInterface } from "../interfaces/servicInterface";
 
 export const getServices = async () => {
     const services: ServiceInterface[] | null = await Services.find({})
